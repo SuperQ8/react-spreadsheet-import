@@ -20,10 +20,14 @@ export const translations = {
   },
   selectHeaderStep: {
     title: "Select header row",
+    manifestTitle: "qf select header",
+    manifestDescription: "(You will have a chance to rename or remove columns in next steps)",
     nextButtonTitle: "Next",
   },
   matchColumnsStep: {
     title: "Match Columns",
+    manifestTitle: "qf match columns:",
+    manifestDescription: "(You will have a chance to rename or remove columns in next steps)",
     nextButtonTitle: "Next",
     userTableTitle: "Your table",
     templateTitle: "Will become",
@@ -37,10 +41,12 @@ export const translations = {
   },
   validationStep: {
     title: "Validate data",
-    nextButtonTitle: "Confirm",
+    manifestTitle: "qf validation:",
+    manifestDescription: "(You will have a chance to rename or remove columns in next steps)",
+    nextButtonTitle: "Submit",
     noRowsMessage: "No data found",
     noRowsMessageWhenFiltered: "No data containing errors",
-    discardButtonTitle: "Discard selected rows",
+    discardButtonTitle: "Discard selections",
     filterSwitchTitle: "Show only rows with errors",
   },
   alerts: {

@@ -1,4 +1,4 @@
-import { Column, useRowSelection } from "react-data-grid"
+import { Column, useRowSelection, SelectCellFormatter } from "react-data-grid"
 import { Box, Checkbox, Input, Switch, Tooltip } from "@chakra-ui/react"
 import type { Data, Fields } from "../../../types"
 import type { ChangeEvent } from "react"
@@ -23,6 +23,16 @@ export const generateColumns = <T extends string>(fields: Fields<T>): Column<Dat
     sortable: false,
     frozen: true,
     cellClass: "rdg-checkbox",
+    headerRenderer(props) {
+      return (
+        <SelectCellFormatter
+          aria-label="Select All"
+          isCellSelected={props.isCellSelected}
+          value={props.allRowsSelected}
+          onChange={props.onAllRowsSelectionChange}
+        />
+      )
+    },
     formatter: (props) => {
       // eslint-disable-next-line  react-hooks/rules-of-hooks
       const [isRowSelected, onRowSelectionChange] = useRowSelection()

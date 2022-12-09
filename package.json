@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UgnisSoftware/react-spreadsheet-import.git"
+    "url": "git+https://github.com/SuperQ8/react-spreadsheet-import.git"
   },
   "keywords": [
     "React",
@@ -41,9 +41,9 @@
   "author": "Ugnis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/UgnisSoftware/react-spreadsheet-import/issues"
+    "url": "https://github.com/SuperQ8/react-spreadsheet-import/issues"
   },
-  "homepage": "https://github.com/UgnisSoftware/react-spreadsheet-import#readme",
+  "homepage": "https://github.com/SuperQ8/react-spreadsheet-import#readme",
   "peerDependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",

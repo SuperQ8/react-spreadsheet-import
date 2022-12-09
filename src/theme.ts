@@ -82,7 +82,7 @@ export const themeOverrides = {
         heading: {
           fontSize: "3xl",
           color: "textColor",
-          mb: "2rem",
+          mb: "1rem",
         },
         title: {
           fontSize: "2xl",
@@ -116,9 +116,21 @@ export const themeOverrides = {
     SelectSheetStep: {
       baseStyle: {
         heading: {
-          color: "textColor",
-          mb: 8,
           fontSize: "3xl",
+          color: "textColor",
+          mb: "1rem",
+        },
+        title: {
+          fontSize: "2xl",
+          lineHeight: 8,
+          fontWeight: "semibold",
+          color: "textColor",
+        },
+        subtitle: {
+          fontSize: "md",
+          lineHeight: 6,
+          color: "subtitleColor",
+          mb: "1rem",
         },
         radio: {},
         radioLabel: {
@@ -129,25 +141,42 @@ export const themeOverrides = {
     SelectHeaderStep: {
       baseStyle: {
         heading: {
-          color: "textColor",
-          mb: 8,
           fontSize: "3xl",
+          color: "textColor",
+          mb: "1rem",
+        },
+        title: {
+          fontSize: "2xl",
+          lineHeight: 8,
+          fontWeight: "semibold",
+          color: "textColor",
+        },
+        subtitle: {
+          fontSize: "md",
+          lineHeight: 6,
+          color: "subtitleColor",
+          mb: "1rem",
         },
       },
     },
     MatchColumnsStep: {
       baseStyle: {
         heading: {
-          color: "textColor",
-          mb: 8,
           fontSize: "3xl",
+          color: "textColor",
+          mb: "1rem",
         },
         title: {
-          color: "textColor",
           fontSize: "2xl",
           lineHeight: 8,
           fontWeight: "semibold",
-          mb: 4,
+          color: "textColor",
+        },
+        subtitle: {
+          fontSize: "md",
+          lineHeight: 6,
+          color: "subtitleColor",
+          mb: "1rem",
         },
         userTable: {
           header: {
@@ -274,8 +303,21 @@ export const themeOverrides = {
     ValidationStep: {
       baseStyle: {
         heading: {
-          color: "textColor",
           fontSize: "3xl",
+          color: "textColor",
+          mb: "1rem",
+        },
+        title: {
+          fontSize: "2xl",
+          lineHeight: 8,
+          fontWeight: "semibold",
+          color: "textColor",
+        },
+        subtitle: {
+          fontSize: "md",
+          lineHeight: 6,
+          color: "subtitleColor",
+          mb: "1rem",
         },
         select: {
           dropdownIndicator: (provided) => ({
@@ -331,6 +373,10 @@ export const themeOverrides = {
             whiteSpace: "nowrap",
           }),
         } as ChakraStylesConfig<SelectOption>,
+        delBtn: {
+          background: "red",
+          color: "white",
+        },
       },
     },
     MatchIcon: MatchIconTheme,
