@@ -1,7 +1,7 @@
 {
-  "name": "react-spreadsheet-import",
-  "version": "2.0.8",
-  "description": "React spreadsheet import for xlsx and csv files with column matching and validation",
+  "name": "react-spreadsheet-import-agi",
+  "version": "1.0.0",
+  "description": "Modified folk of react-spreadsheet-import, credit to UgnisSoftware",
   "main": "./dist-commonjs/index.js",
   "module": "./dist/index.js",
   "types": "./types/index.d.ts",
@@ -38,7 +38,7 @@
     "automatic",
     "match"
   ],
-  "author": "Ugnis",
+  "author": "Quentin",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SuperQ8/react-spreadsheet-import/issues"

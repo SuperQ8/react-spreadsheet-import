@@ -76,20 +76,22 @@ export const ValidationStep = <T extends string>({ initialData }: Props<T>) => {
   const rowKeyGetter = useCallback((row: Data<T> & Meta) => row.__index, [])
 
   const submitData = () => {
-    const all = data.map(({ __index, __errors, ...value }) => ({ ...value })) as unknown as Data<T>[]
+    const checkedrow = data.filter((value) => selectedRows.has(value.__index))
+    const all = checkedrow.map(({ __index, __errors, ...value }) => ({ ...value })) as unknown as Data<T>[]
     const validData = all.filter((value, index) => {
-      const originalValue = data[index]
+      const originalValue = checkedrow[index]
       if (originalValue?.__errors) {
         return !Object.values(originalValue.__errors)?.filter((err) => err.level === "error").length
       }
       return true
     })
     const invalidData = all.filter((value) => !validData.includes(value))
-    onSubmit({ validData, invalidData, all: data })
+    onSubmit({ validData, invalidData, all: checkedrow })
     onClose()
   }
   const onContinue = () => {
-    const invalidData = data.find((value) => {
+    const checkedrow = data.filter((value) => selectedRows.has(value.__index))
+    const invalidData = checkedrow.find((value) => {
       if (value?.__errors) {
         return !!Object.values(value.__errors)?.filter((err) => err.level === "error").length
       }
