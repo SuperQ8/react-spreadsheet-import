@@ -1,5 +1,5 @@
 import type XLSX from "xlsx"
-import { Box, Heading, ModalBody, Text, useStyleConfig } from "@chakra-ui/react"
+import { Box, Center, Heading, HStack, Link, ModalBody, Text, useStyleConfig } from "@chakra-ui/react"
 import { DropZone } from "./components/DropZone"
 import { useRsi } from "../../hooks/useRsi"
 import { ExampleTable } from "./components/ExampleTable"
@@ -9,9 +9,11 @@ import type { themeOverrides } from "../../theme"
 
 type UploadProps = {
   onContinue: (data: XLSX.WorkBook) => Promise<void>
+  onDownload: (filetype: string) => Promise<void>
+  fileType: string
 }
 
-export const UploadStep = ({ onContinue }: UploadProps) => {
+export const UploadStep = ({ onContinue, onDownload, fileType }: UploadProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const styles = useStyleConfig("UploadStep") as typeof themeOverrides["components"]["UploadStep"]["baseStyle"]
   const { translations, fields } = useRsi()
@@ -28,11 +30,14 @@ export const UploadStep = ({ onContinue }: UploadProps) => {
       <Heading sx={styles.heading}>{translations.uploadStep.title}</Heading>
       <Text sx={styles.title}>{translations.uploadStep.manifestTitle}</Text>
       <Text sx={styles.subtitle}>{translations.uploadStep.manifestDescription}</Text>
-      <Box sx={styles.tableWrapper}>
-        <ExampleTable fields={fields} />
-        <FadingOverlay />
-      </Box>
-      <DropZone onContinue={handleOnContinue} isLoading={isLoading} />
+      <Center>
+        <DropZone onContinue={handleOnContinue} isLoading={isLoading} />
+      </Center>
+      <Center mt={4}>
+        <Link sx={styles.downloadLink} onClick={() => onDownload(fileType)}>
+          Download the {fileType} template
+        </Link>
+      </Center>
     </ModalBody>
   )
 }

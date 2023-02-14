@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */
+
 import { StepsStyleConfig } from "chakra-ui-steps"
 import { darken } from "@chakra-ui/theme-tools"
 import type { CSSObject } from "@chakra-ui/react"
@@ -6,6 +8,8 @@ import type { ChakraStylesConfig } from "chakra-react-select"
 import type { SelectOption } from "./types"
 
 type CSSObjectWithActiveStep = CSSObject & { _activeStep: CSSObject }
+
+export const primeColor = "#C12E49"
 
 const StepsTheme: typeof StepsStyleConfig = {
   ...StepsStyleConfig,
@@ -22,14 +26,81 @@ const StepsTheme: typeof StepsStyleConfig = {
       },
       stepIconContainer: {
         ...StepsStyleConfig.baseStyle(props).stepIconContainer,
-        bg: "background",
-        borderColor: "background",
+        bg: "#D6D8DA",
+        borderColor: "#D6D8DA",
         _activeStep: {
           ...(StepsStyleConfig.baseStyle(props).stepIconContainer! as CSSObjectWithActiveStep)._activeStep,
-          bg: darken("background", 0.5),
+          bg: "#1F78AD",
+          borderColor: "#1F78AD",
         },
       },
     }
+  },
+  // prettier-ignore
+  sizes: {
+    sm: {
+      stepIconContainer: {
+        width: "24px",
+        height: "24px",
+        borderWidth: "0",
+      },      
+      label: {
+          fontWeight: "600",
+          textAlign: "center",
+          fontSize: "16",
+      },
+      icon: {
+        width: "24px",
+        height: "24px",
+      },
+      description: {
+        fontWeight: "600",
+        textAlign: "center",
+        fontSize: "16",
+      },
+    },
+    md: {
+      stepIconContainer: {
+        width: "24px",
+        height: "24px",
+        borderWidth: "0",
+      },
+      label: {
+          fontWeight: "600",
+          textAlign: "center",
+          fontSize: "16",
+      },
+      icon: {
+        width: "24px",
+        height: "24px",
+      },
+      description: {
+        fontWeight: "600",
+        textAlign: "center",
+        fontSize: "16",
+      },
+    },
+    lg: {
+      stepIconContainer: {
+        width: "24px",
+        height: "24px",
+        borderWidth: "0",
+      },
+      label: {
+          fontWeight: "600",
+          textAlign: "center",
+          fontSize: "16",
+      },
+      icon: {
+        width: "24px",
+        height: "24px",
+      },
+      description: {
+        fontWeight: "600",
+        textAlign: "center",
+        fontSize: "16",
+      },
+    },    
   },
 }
 
@@ -56,7 +127,7 @@ export const themeOverrides = {
     subtitleColor: "#718096",
     inactiveColor: "#A0AEC0",
     border: "#E2E8F0",
-    background: "white",
+    background: "#F7F7F8",
     backgroundAlpha: "rgba(255,255,255,0)",
     secondaryBackground: "#EDF2F7",
     highlight: "#E2E8F0",
@@ -101,15 +172,33 @@ export const themeOverrides = {
           position: "relative",
           h: "72px",
         },
-        dropzoneText: {
+        dropzoneTitle: {
           size: "lg",
+          fontSize: "16px",
           lineHeight: 7,
           fontWeight: "semibold",
           color: "textColor",
         },
+        dropzoneSubTitle: {
+          size: "md",
+          fontSize: "14px",
+          lineHeight: 7,
+          fontWeight: "semibold",
+          color: "textColor",
+        },
+        downloadLink: {
+          size: "md",
+          fontSize: "14px",
+          lineHeight: 7,
+          fontWeight: "semibold",
+          color: primeColor,
+        },
         dropZoneBorder: "rsi.500",
         dropzoneButton: {
-          mt: "1rem",
+          mb: "32px",
+          bg: primeColor,
+          width: "686px",
+          height: "56px",
         },
       },
     },

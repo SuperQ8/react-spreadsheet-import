@@ -42,9 +42,11 @@ export type StepState =
 
 interface Props {
   nextStep: () => void
+  onDownload: (filetype: string) => Promise<void>
+  fileType: string
 }
 
-export const UploadFlow = ({ nextStep }: Props) => {
+export const UploadFlow = ({ nextStep, onDownload, fileType }: Props) => {
   const { initialStepState } = useRsi()
   const [state, setState] = useState<StepState>(initialStepState || { type: StepType.upload })
   const { maxRecords, translations, uploadStepHook, selectHeaderStepHook, matchColumnsStepHook } = useRsi()
@@ -88,6 +90,8 @@ export const UploadFlow = ({ nextStep }: Props) => {
               setState({ type: StepType.selectSheet, workbook })
             }
           }}
+          onDownload={onDownload}
+          fileType={fileType}
         />
       )
     case StepType.selectSheet:

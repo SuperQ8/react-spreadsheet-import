@@ -1,6 +1,6 @@
 {
   "name": "react-spreadsheet-import-agi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modified folk of react-spreadsheet-import, credit to UgnisSoftware",
   "main": "./dist-commonjs/index.js",
   "module": "./dist/index.js",

@@ -4,6 +4,6 @@ export const getDropZoneBorder = (color: string) => {
     backgroundSize: "2px 100%, 100% 2px, 2px 100% , 100% 2px",
     backgroundPosition: "0 0, 0 0, 100% 0, 0 100%",
     backgroundRepeat: "no-repeat",
-    borderRadius: "4px",
+    borderRadius: "xl",
   }
 }

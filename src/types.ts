@@ -45,6 +45,10 @@ export type RsiProps<T extends string> = {
   parseRaw?: boolean
   // Use for right-to-left (RTL) support
   rtl?: boolean
+  // for file download function
+  onDownload: (filetype: string) => Promise<void>
+  // for file download function's file type
+  fileType: string
 }
 
 export type RawData = Array<string | undefined>

@@ -1,4 +1,4 @@
-import { Box, Button, Text, useStyleConfig, useToast } from "@chakra-ui/react"
+import { Box, Button, Text, useStyleConfig, useToast, VStack, Image } from "@chakra-ui/react"
 import { useDropzone } from "react-dropzone"
 import * as XLSX from "xlsx"
 import { useState } from "react"
@@ -49,7 +49,11 @@ export const DropZone = ({ onContinue, isLoading }: DropZoneProps) => {
     <Box
       {...getRootProps()}
       {...getDropZoneBorder(styles.dropZoneBorder)}
-      width="100%"
+      bg="white"
+      maxW="750px"
+      maxH="384px"
+      h="750px"
+      w="384px"
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -58,12 +62,24 @@ export const DropZone = ({ onContinue, isLoading }: DropZoneProps) => {
     >
       <input {...getInputProps()} data-testid="rsi-dropzone" />
       {isDragActive ? (
-        <Text sx={styles.dropzoneText}>{translations.uploadStep.dropzone.activeDropzoneTitle}</Text>
+        <Text sx={styles.dropzoneTitle}>{translations.uploadStep.dropzone.activeDropzoneTitle}</Text>
       ) : loading || isLoading ? (
-        <Text sx={styles.dropzoneText}>{translations.uploadStep.dropzone.loadingTitle}</Text>
+        <Text sx={styles.dropzoneTitle}>{translations.uploadStep.dropzone.loadingTitle}</Text>
       ) : (
         <>
-          <Text sx={styles.dropzoneText}>{translations.uploadStep.dropzone.title}</Text>
+          <VStack
+            width="686px"
+            height="224px"
+            alignContent="center"
+            justify="center"
+            border="1px"
+            borderColor="gray.200"
+            my={8}
+          >
+            <Image src="/upload.svg" alt="upload" />
+            <Text sx={styles.dropzoneTitle}>{translations.uploadStep.dropzone.title}</Text>
+            <Text sx={styles.dropzoneSubTitle}>{translations.uploadStep.dropzone.subTitle}</Text>
+          </VStack>
           <Button sx={styles.dropzoneButton} onClick={open}>
             {translations.uploadStep.dropzone.buttonTitle}
           </Button>

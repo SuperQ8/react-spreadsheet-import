@@ -31,7 +31,7 @@ export const ReactSpreadsheetImport = <T extends string>(props: RsiProps<T>) => 
   return (
     <Providers theme={mergedThemes} rsiValues={{ ...props, translations: mergedTranslations }}>
       <ModalWrapper isOpen={props.isOpen} onClose={props.onClose}>
-        <Steps />
+        <Steps onDownload={props.onDownload} fileType={props.fileType} />
       </ModalWrapper>
     </Providers>
   )
