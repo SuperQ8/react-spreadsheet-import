@@ -24,7 +24,9 @@ export const ModalWrapper = ({ children, isOpen, onClose }: Props) => {
     >
       <div dir={rtl ? "rtl" : "ltr"}>
         <ModalOverlay />
-        <ModalContent>{children}</ModalContent>
+        <ModalContent m={0} maxW="100vw" maxH="100vh" borderRadius={0}>
+          {children}
+        </ModalContent>
       </div>
     </Modal>
   )
