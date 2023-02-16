@@ -26,7 +26,12 @@ export const UploadStep = ({ onContinue, onDownload, fileType }: UploadProps) =>
     [onContinue],
   )
   return (
-    <ModalBody>
+    <ModalBody
+      w={styles.body.width}
+      mx={styles.body.mx}
+      paddingInlineStart={styles.body.px}
+      paddingInlineEnd={styles.body.px}
+    >
       <Heading sx={styles.heading}>{translations.uploadStep.title}</Heading>
       <Text sx={styles.title}>{translations.uploadStep.manifestTitle}</Text>
       <Text sx={styles.subtitle}>{translations.uploadStep.manifestDescription}</Text>

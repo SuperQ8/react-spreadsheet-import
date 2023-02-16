@@ -114,7 +114,13 @@ export const ValidationStep = <T extends string>({ initialData }: Props<T>) => {
           submitData()
         }}
       />
-      <ModalBody pb={0}>
+      <ModalBody
+        pb={0}
+        w={styles.body.width}
+        mx={styles.body.mx}
+        paddingInlineStart={styles.body.px}
+        paddingInlineEnd={styles.body.px}
+      >
         <Heading sx={styles.heading}>{translations.validationStep.title}</Heading>
         <Text sx={styles.title}>{translations.validationStep.manifestTitle}</Text>
         <Text sx={styles.subtitle}>{translations.validationStep.manifestDescription}</Text>

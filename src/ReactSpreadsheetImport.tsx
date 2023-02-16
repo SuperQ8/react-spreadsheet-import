@@ -6,6 +6,7 @@ import { Providers } from "./components/Providers"
 import type { RsiProps } from "./types"
 import { ModalWrapper } from "./components/ModalWrapper"
 import { translations } from "./translationsRSIProps"
+import AIAHeader from "./components/AIAHeader"
 
 export const defaultTheme = themeOverrides
 
@@ -31,6 +32,7 @@ export const ReactSpreadsheetImport = <T extends string>(props: RsiProps<T>) => 
   return (
     <Providers theme={mergedThemes} rsiValues={{ ...props, translations: mergedTranslations }}>
       <ModalWrapper isOpen={props.isOpen} onClose={props.onClose}>
+        <AIAHeader onClose={props.onClose} />
         <Steps onDownload={props.onDownload} fileType={props.fileType} />
       </ModalWrapper>
     </Providers>

@@ -153,6 +153,11 @@ export const themeOverrides = {
   components: {
     UploadStep: {
       baseStyle: {
+        body: {
+          width: "1200px",
+          mx: "auto",
+          px: 0,
+        },
         heading: {
           fontSize: "3xl",
           color: "textColor",
@@ -232,6 +237,11 @@ export const themeOverrides = {
     },
     SelectHeaderStep: {
       baseStyle: {
+        body: {
+          width: "1200px",
+          mx: "auto",
+          px: 0,
+        },
         heading: {
           fontSize: "3xl",
           color: "textColor",
@@ -256,6 +266,11 @@ export const themeOverrides = {
     },
     MatchColumnsStep: {
       baseStyle: {
+        body: {
+          width: "1200px",
+          mx: "auto",
+          px: 0,
+        },
         heading: {
           fontSize: "3xl",
           color: "textColor",
@@ -398,6 +413,11 @@ export const themeOverrides = {
     },
     ValidationStep: {
       baseStyle: {
+        body: {
+          width: "1200px",
+          mx: "auto",
+          px: 0,
+        },
         heading: {
           fontSize: "3xl",
           color: "textColor",

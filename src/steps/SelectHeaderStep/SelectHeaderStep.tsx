@@ -30,7 +30,13 @@ export const SelectHeaderStep = ({ data, onContinue }: SelectHeaderProps) => {
 
   return (
     <>
-      <ModalBody pb={0}>
+      <ModalBody
+        pb={0}
+        w={styles.body.width}
+        mx={styles.body.mx}
+        paddingInlineStart={styles.body.px}
+        paddingInlineEnd={styles.body.px}
+      >
         <Heading {...styles.heading}>{translations.selectHeaderStep.title}</Heading>
         <Text sx={styles.title}>{translations.selectHeaderStep.manifestTitle}</Text>
         <Text sx={styles.subtitle}>{translations.selectHeaderStep.manifestDescription}</Text>

@@ -13,6 +13,7 @@ export const ModalWrapper = ({ children, isOpen, onClose }: Props) => {
   const { rtl } = useRsi()
   return (
     <Modal
+      size="full"
       isOpen={isOpen}
       onClose={onClose}
       id="rsi"
@@ -23,7 +24,6 @@ export const ModalWrapper = ({ children, isOpen, onClose }: Props) => {
     >
       <div dir={rtl ? "rtl" : "ltr"}>
         <ModalOverlay />
-        <ModalCloseButton onClose={onClose} />
         <ModalContent>{children}</ModalContent>
       </div>
     </Modal>

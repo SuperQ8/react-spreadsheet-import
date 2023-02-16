@@ -28,7 +28,15 @@ export const ColumnGrid = <T extends string>({
 
   return (
     <>
-      <ModalBody flexDir="column" p={8} overflow="auto">
+      <ModalBody
+        flexDir="column"
+        py={8}
+        overflow="auto"
+        w={styles.body.width}
+        mx={styles.body.mx}
+        paddingInlineStart={styles.body.px}
+        paddingInlineEnd={styles.body.px}
+      >
         <Heading sx={styles.heading}>{translations.matchColumnsStep.title}</Heading>
         <Text sx={styles.title}>{translations.matchColumnsStep.manifestTitle}</Text>
         <Text sx={styles.subtitle}>{translations.matchColumnsStep.manifestDescription}</Text>
