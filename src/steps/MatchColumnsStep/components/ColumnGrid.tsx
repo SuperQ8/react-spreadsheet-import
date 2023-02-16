@@ -38,31 +38,46 @@ export const ColumnGrid = <T extends string>({
           gridTemplateRows="auto auto auto 1fr"
           gridTemplateColumns={`0.75rem repeat(${columns.length}, minmax(18rem, auto)) 0.75rem`}
         >
-          <Box gridColumn={`1/${columns.length + 3}`}>
+          <Box gridColumn={`1/${columns.length + 3}`} mb={4}>
             <Text sx={styles.title}>{translations.matchColumnsStep.userTableTitle}</Text>
           </Box>
           {columns.map((column, index) => (
-            <Box gridRow="2/3" gridColumn={`${index + 2}/${index + 3}`} pt={3} key={column.header + index}>
+            <Box
+              gridRow="2/3"
+              gridColumn={`${index + 2}/${index + 3}`}
+              pt={3}
+              key={column.header + index}
+              bg="white"
+              zIndex={5}
+            >
               {userColumn(column)}
             </Box>
           ))}
           <FadingWrapper gridColumn={`1/${columns.length + 3}`} gridRow="2/3" />
-          <Box gridColumn={`1/${columns.length + 3}`} mt={7}>
+          <Box gridColumn={`1/${columns.length + 3}`} mt={7} mb={4}>
             <Text sx={styles.title}>{translations.matchColumnsStep.templateTitle}</Text>
           </Box>
-          <FadingWrapper gridColumn={`1/${columns.length + 3}`} gridRow="4/5" />
-          {columns.map((column, index) => (
-            <Box
-              gridRow="4/5"
-              gridColumn={`${index + 2}/${index + 3}`}
-              key={column.header + index}
-              py="1.125rem"
-              pl={2}
-              pr={3}
-            >
-              {templateColumn(column)}
-            </Box>
-          ))}
+          {columns.map((column, index) => {
+            const lR = index === 0 ? "lg" : "none"
+            const rR = index === columns.length - 1 ? "lg" : "none"
+            return (
+              <Box
+                gridRow="4/5"
+                gridColumn={`${index + 2}/${index + 3}`}
+                key={column.header + index}
+                h={20}
+                py="1.125rem"
+                mx={-2}
+                pl={2}
+                pr={3}
+                bg="white"
+                borderLeftRadius={lR}
+                borderRightRadius={rR}
+              >
+                {templateColumn(column)}
+              </Box>
+            )
+          })}
         </Flex>
       </ModalBody>
       <ContinueButton

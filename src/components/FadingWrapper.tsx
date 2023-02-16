@@ -11,15 +11,18 @@ export const FadingWrapper = ({ gridColumn, gridRow }: FadingWrapperProps) => (
       gridColumn={gridColumn}
       gridRow={gridRow}
       borderRadius="1.2rem"
-      border="1px solid"
+      border="none"
       borderColor="border"
       pointerEvents="none"
+      bg="white"
+      zIndex={0}
     />
     <Box
       gridColumn={gridColumn}
       gridRow={gridRow}
       pointerEvents="none"
       bgGradient="linear(to bottom, backgroundAlpha, background)"
+      zIndex={10}
     />
   </>
 )

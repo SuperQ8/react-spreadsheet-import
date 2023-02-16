@@ -34,15 +34,15 @@ export const SelectHeaderStep = ({ data, onContinue }: SelectHeaderProps) => {
         <Heading {...styles.heading}>{translations.selectHeaderStep.title}</Heading>
         <Text sx={styles.title}>{translations.selectHeaderStep.manifestTitle}</Text>
         <Text sx={styles.subtitle}>{translations.selectHeaderStep.manifestDescription}</Text>
-        <Box h={0} flexGrow={1}>
+        <Box h="auto" flexGrow={1}>
           <SelectHeaderTable data={data} selectedRows={selectedRows} setSelectedRows={setSelectedRows} />
+          <ContinueButton
+            onContinue={handleContinue}
+            title={translations.selectHeaderStep.nextButtonTitle}
+            isLoading={isLoading}
+          />
         </Box>
       </ModalBody>
-      <ContinueButton
-        onContinue={handleContinue}
-        title={translations.selectHeaderStep.nextButtonTitle}
-        isLoading={isLoading}
-      />
     </>
   )
 }

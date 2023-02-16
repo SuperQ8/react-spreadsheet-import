@@ -1,5 +1,6 @@
-import { Box, Flex, IconButton, Text, useStyleConfig } from "@chakra-ui/react"
-import { CgClose, CgUndo } from "react-icons/cg"
+import { Box, Center, Flex, IconButton, Text, useStyleConfig } from "@chakra-ui/react"
+import { CgUndo } from "react-icons/cg"
+import { RiDeleteBin5Fill } from "react-icons/ri"
 import type { Column } from "../MatchColumnsStep"
 import { ColumnType } from "../MatchColumnsStep"
 import { dataAttr } from "@chakra-ui/utils"
@@ -24,10 +25,7 @@ export const UserTableColumn = <T extends string>(props: UserTableColumnProps<T>
   const isIgnored = type === ColumnType.ignored
   return (
     <Box>
-      <Flex px={6} justifyContent="space-between" alignItems="center" mb={4}>
-        <Text sx={styles.userTable.header} data-ignored={dataAttr(isIgnored)}>
-          {header}
-        </Text>
+      <Flex px={6} alignItems="left" mb={4}>
         {type === ColumnType.ignored ? (
           <IconButton
             aria-label="Ignore column"
@@ -38,11 +36,14 @@ export const UserTableColumn = <T extends string>(props: UserTableColumnProps<T>
         ) : (
           <IconButton
             aria-label="Ignore column"
-            icon={<CgClose />}
+            icon={<RiDeleteBin5Fill />}
             onClick={() => onIgnore(index)}
             {...styles.userTable.ignoreButton}
           />
         )}
+        <Center sx={styles.userTable.header} data-ignored={dataAttr(isIgnored)}>
+          {header}
+        </Center>
       </Flex>
       {entries.map((entry, index) => (
         <Text key={(entry || "") + index} sx={styles.userTable.cell} data-ignored={dataAttr(isIgnored)}>

@@ -1,4 +1,5 @@
 import { Button, ModalFooter } from "@chakra-ui/react"
+import { primeBackground } from "../theme"
 
 type ContinueButtonProps = {
   onContinue: (val: any) => void
@@ -7,7 +8,7 @@ type ContinueButtonProps = {
 }
 
 export const ContinueButton = ({ onContinue, title, isLoading }: ContinueButtonProps) => (
-  <ModalFooter>
+  <ModalFooter bg={primeBackground} pt={12}>
     <Button size="lg" w="21rem" onClick={onContinue} isLoading={isLoading}>
       {title}
     </Button>

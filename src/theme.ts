@@ -9,7 +9,10 @@ import type { SelectOption } from "./types"
 
 type CSSObjectWithActiveStep = CSSObject & { _activeStep: CSSObject }
 
-export const primeColor = "#C12E49"
+const primeColor = "#C12E49"
+export const primeBackground = "#F7F7F8"
+const stepIconColor = "#D6D8DA"
+const stepActiveIconColor = "#1F78AD"
 
 const StepsTheme: typeof StepsStyleConfig = {
   ...StepsStyleConfig,
@@ -26,12 +29,12 @@ const StepsTheme: typeof StepsStyleConfig = {
       },
       stepIconContainer: {
         ...StepsStyleConfig.baseStyle(props).stepIconContainer,
-        bg: "#D6D8DA",
-        borderColor: "#D6D8DA",
+        bg: stepIconColor,
+        borderColor: stepIconColor,
         _activeStep: {
           ...(StepsStyleConfig.baseStyle(props).stepIconContainer! as CSSObjectWithActiveStep)._activeStep,
-          bg: "#1F78AD",
-          borderColor: "#1F78AD",
+          bg: stepActiveIconColor,
+          borderColor: stepActiveIconColor,
         },
       },
     }
@@ -127,7 +130,7 @@ export const themeOverrides = {
     subtitleColor: "#718096",
     inactiveColor: "#A0AEC0",
     border: "#E2E8F0",
-    background: "#F7F7F8",
+    background: primeBackground,
     backgroundAlpha: "rgba(255,255,255,0)",
     secondaryBackground: "#EDF2F7",
     highlight: "#E2E8F0",
@@ -246,6 +249,9 @@ export const themeOverrides = {
           color: "subtitleColor",
           mb: "1rem",
         },
+        modalFooter: {
+          background: primeBackground,
+        },
       },
     },
     MatchColumnsStep: {
@@ -269,6 +275,7 @@ export const themeOverrides = {
         },
         userTable: {
           header: {
+            paddingLeft: "10px",
             fontSize: "xs",
             lineHeight: 4,
             fontWeight: "bold",
@@ -463,8 +470,8 @@ export const themeOverrides = {
           }),
         } as ChakraStylesConfig<SelectOption>,
         delBtn: {
-          background: "red",
-          color: "white",
+          background: primeBackground,
+          color: primeColor,
         },
       },
     },
@@ -523,9 +530,9 @@ export const themeOverrides = {
       ".rdg": {
         contain: "size layout style paint",
         borderRadius: "lg",
-        border: "none",
         borderTop: "1px solid var(--rdg-border-color)",
         blockSize: "100%",
+        border: "none",
 
         // we have to use vars here because chakra does not autotransform unknown props
         "--rdg-row-height": "35px",
@@ -542,6 +549,9 @@ export const themeOverrides = {
         "--rdg-border-color": "var(--chakra-colors-border)",
         "--rdg-frozen-cell-box-shadow": "none",
         "--rdg-font-size": "var(--chakra-fontSizes-sm)",
+      },
+      ".rdg-row,.rdg-header-row": {
+        backgroundColor: "white",
       },
       ".rdg-header-row .rdg-cell": {
         color: "textColor",
@@ -578,6 +588,7 @@ export const themeOverrides = {
         borderRight: "none",
         borderInlineEnd: "none",
         borderBottom: "1px solid var(--rdg-border-color)",
+        borderColor: "white",
         whiteSpace: "nowrap",
         overflow: "hidden",
         textOverflow: "ellipsis",
