@@ -26,7 +26,7 @@ export const ValidationStep = <T extends string>({ initialData }: Props<T>) => {
       [],
     ),
   )
-  const [selectedRows, setSelectedRows] = useState<ReadonlySet<number | string>>(new Set())
+  const [selectedRows, setSelectedRows] = useState<ReadonlySet<number | string>>(new Set(data.map((d) => d.__index)))
   const [filterByErrors, setFilterByErrors] = useState(false)
   const [showSubmitAlert, setShowSubmitAlert] = useState(false)
 

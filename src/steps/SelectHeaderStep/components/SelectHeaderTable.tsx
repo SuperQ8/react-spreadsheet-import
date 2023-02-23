@@ -28,7 +28,8 @@ export const SelectHeaderTable = ({ data, selectedRows, setSelectedRows }: Props
         })
       }}
       onRowClick={(row) => {
-        setSelectedRows(new Set([data.indexOf(row)]))
+        // purposely disable the row selection - comment the line below
+        // setSelectedRows(new Set([data.indexOf(row)]))
       }}
       headerRowHeight={0}
       className="rdg-static"

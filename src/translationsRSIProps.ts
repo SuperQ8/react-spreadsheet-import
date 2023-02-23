@@ -21,7 +21,7 @@ export const translations = {
   },
   selectHeaderStep: {
     title: "Select header row",
-    manifestTitle: "qf select header",
+    manifestTitle: "qf select header with some extra line needs to split into new line",
     manifestDescription: "(You will have a chance to rename or remove columns in next steps)",
     nextButtonTitle: "Next",
   },
@@ -66,7 +66,7 @@ export const translations = {
     },
     unmatchedRequiredFields: {
       headerTitle: "Not all columns matched",
-      bodyText: "There are required columns that are not matched or ignored. Do you want to continue?",
+      bodyText: "There are required columns that are not matched or ignored. Please finish the matching",
       listTitle: "Columns not matched:",
       cancelButtonTitle: "Cancel",
       continueButtonTitle: "Continue",
