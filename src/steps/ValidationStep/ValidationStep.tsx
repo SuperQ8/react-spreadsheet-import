@@ -159,7 +159,10 @@ export const ValidationStep = <T extends string>({ initialData }: Props<T>) => {
           />
         </Box>
       </ModalBody>
-      <ContinueButton onContinue={onContinue} title={translations.validationStep.nextButtonTitle} />
+      <ContinueButton
+        onContinue={onContinue}
+        title={translations.validationStep.nextButtonTitle + ` ${selectedRows.size} records`}
+      />
     </>
   )
 }
