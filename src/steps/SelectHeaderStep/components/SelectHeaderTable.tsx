@@ -20,16 +20,19 @@ export const SelectHeaderTable = ({ data, selectedRows, setSelectedRows }: Props
       selectedRows={selectedRows}
       onSelectedRowsChange={(newRows) => {
         // allow selecting only one row
+        /*** uncomment below to enable row selection feature
         newRows.forEach((value) => {
           if (!selectedRows.has(value as number)) {
             setSelectedRows(new Set([value as number]))
             return
           }
         })
+        ***/
       }}
       onRowClick={(row) => {
-        // purposely disable the row selection - comment the line below
-        // setSelectedRows(new Set([data.indexOf(row)]))
+        /*** uncomment below to enable row selection feature
+        setSelectedRows(new Set([data.indexOf(row)]))
+        ***/
       }}
       headerRowHeight={0}
       className="rdg-static"

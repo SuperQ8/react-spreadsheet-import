@@ -26,8 +26,8 @@ export const MatchIcon = (props: MatchIconProps) => {
       minH={6}
       w={6}
       h={6}
-      ml="0.875rem"
-      mr={3}
+      ml="0.125rem"
+      mr={5}
       data-highlighted={dataAttr(props.isChecked)}
       data-testid="column-checkmark"
     >
